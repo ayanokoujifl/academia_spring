@@ -1,0 +1,30 @@
+package com.academia.escola;
+
+import java.time.LocalDate;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.academia.escola.entities.Funcionario;
+import com.academia.escola.enums.FuncionarioTipo;
+
+@SpringBootApplication
+public class BackendApplication implements CommandLineRunner {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BackendApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+
+		LocalDate d1 = LocalDate.parse("1995-08-17");
+		
+		Funcionario f1 = new Funcionario(null, "Rosinei", 12345678910L, 8000.00,d1 , 20,
+				FuncionarioTipo.INSTRUTOR);
+		
+
+	}
+
+}

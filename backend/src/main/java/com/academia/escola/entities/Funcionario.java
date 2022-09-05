@@ -1,18 +1,24 @@
 package com.academia.escola.entities;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class Funcionario {
+import com.academia.escola.enums.FuncionarioTipo;
 
-	public enum tipoFuncionario {
-		INSTRUTOR, FAXINEIRO, RH, GERENTE, VENDEDOR;
-	}
+@Entity
+@Table(name="tb_funcionario")
+public class Funcionario implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +29,24 @@ public class Funcionario {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private LocalDate data_nascimento;
 	private Integer dia_pagamento;
-	private tipoFuncionario tipo;
+	@Enumerated(EnumType.STRING)
+	private FuncionarioTipo tipo;
+
+	public Funcionario() {
+		// TODO Auto-generated constructor stub
+	}
+		
+	public Funcionario(Long id, String nome, Long cpf, Double salario, LocalDate data_nascimento, Integer dia_pagamento,
+			FuncionarioTipo tipo) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.salario = salario;
+		this.data_nascimento = data_nascimento;
+		this.dia_pagamento = dia_pagamento;
+		this.tipo = tipo;
+	}
 
 	public Long getId() {
 		return id;
@@ -73,11 +96,11 @@ public class Funcionario {
 		this.dia_pagamento = dia_pagamento;
 	}
 
-	public tipoFuncionario getTipo() {
+	public FuncionarioTipo getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(tipoFuncionario tipo) {
+	public void setTipo(FuncionarioTipo tipo) {
 		this.tipo = tipo;
 	}
 

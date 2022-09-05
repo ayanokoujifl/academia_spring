@@ -1,0 +1,5 @@
+package com.academia.escola.entities;
+
+public enum FuncionarioTipo {
+	INSTRUTOR, FAXINEIRO, RH, GERENTE, VENDEDOR;
+}
