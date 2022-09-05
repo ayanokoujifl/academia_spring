@@ -1,0 +1,9 @@
+package com.academia.escola.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController(value = "/clientes")
+public class ClienteController {
+
+	
+}
