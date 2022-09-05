@@ -1,0 +1,6 @@
+spring.datasource.dbcp2.url=jdbc:mysql://localhost/academia?useTimezone=true&serverTimezone=America/Sao_Paulo
+spring.datasource.dbcp2.username=root
+spring.datasource.dbcp2.password=luis7180
+spring.datasource.dbcp2.driverClassName=com.mysql.jdbc.Driver
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update

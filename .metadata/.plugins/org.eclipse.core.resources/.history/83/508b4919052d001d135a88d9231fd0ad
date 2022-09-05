@@ -1,0 +1,5 @@
+package com.academia.escola.entities;
+
+public class Cliente {
+
+}
