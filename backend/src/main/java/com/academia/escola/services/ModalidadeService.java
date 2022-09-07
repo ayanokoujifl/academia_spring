@@ -25,4 +25,11 @@ public class ModalidadeService {
 		Modalidade c = repository.findById(id).get();
 		return c;
 	}
+
+	@Transactional
+	public Modalidade saveModalidade(Modalidade modalidade) {
+		repository.saveAndFlush(modalidade);
+		return modalidade;
+	}
+	
 }

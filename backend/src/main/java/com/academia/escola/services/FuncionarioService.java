@@ -27,4 +27,10 @@ public class FuncionarioService {
 		return funcionario;
 	}
 	
+	@Transactional
+	public Funcionario saveFuncionario(Funcionario f) {
+		repository.saveAndFlush(f);
+		return f;
+	}
+	
 }

@@ -25,4 +25,10 @@ public class VendaService {
 		Venda c = repository.findById(id).get();
 		return c;
 	}
+	
+	@Transactional
+	public Venda saveVenda(Venda venda) {
+		repository.saveAndFlush(venda);
+		return venda;
+	}
 }

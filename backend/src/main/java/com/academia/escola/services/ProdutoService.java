@@ -25,4 +25,10 @@ public class ProdutoService {
 		Produto c = repository.findById(id).get();
 		return c;
 	}
+	
+	@Transactional
+	public Produto saveProduto(Produto produto) {
+		repository.saveAndFlush(produto);
+		return produto;
+	}
 }

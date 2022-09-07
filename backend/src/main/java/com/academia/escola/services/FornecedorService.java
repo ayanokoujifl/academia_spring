@@ -25,4 +25,10 @@ public class FornecedorService {
 		Fornecedor c = repository.findById(id).get();
 		return c;
 	}
+
+	@Transactional
+	public Fornecedor saveFornecedor(Fornecedor fornecedor) {
+		repository.saveAndFlush(fornecedor);
+		return fornecedor;
+	}
 }

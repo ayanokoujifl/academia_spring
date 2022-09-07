@@ -23,6 +23,34 @@ public class Fornecedor {
 	private String nome;
 	@OneToMany
 	@JoinColumn(name="produto")
-	private Set<Produto> produtos = new HashSet();
+	private Set<Produto> produtos = new HashSet<Produto>();
 
+	public Fornecedor() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Long getCnpj() {
+		return cnpj;
+	}
+	public void setCnpj(Long cnpj) {
+		this.cnpj = cnpj;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public Set<Produto> getProdutos() {
+		return produtos;
+	}
+	public void setProdutos(Set<Produto> produtos) {
+		this.produtos = produtos;
+	}
 }
