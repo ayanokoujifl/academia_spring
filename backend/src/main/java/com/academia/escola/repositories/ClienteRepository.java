@@ -8,4 +8,5 @@ import com.academia.escola.entities.Cliente;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
+
 }
