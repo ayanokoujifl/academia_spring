@@ -1,0 +1,39 @@
+package com.academia.escola.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.academia.escola.entities.Cliente;
+import com.academia.escola.repositories.ClienteRepository;
+@Service
+public class ClienteService {
+	@Autowired
+	ClienteRepository repository;
+
+	@Transactional(readOnly = true)
+	public List<Cliente> findAll() {
+		List<Cliente> clientes = repository.findAll();
+		return clientes;
+	}
+
+	@Transactional(readOnly = true)
+	public Cliente findById(Long id) {
+		Cliente c = repository.findById(id).get();
+		return c;
+	}
+
+	public List<Cliente> findByName(String name){
+		List<Cliente> clientes =new ArrayList();
+		for(Cliente c : repository.findAll()) {
+			if(c.getNome() == name) {
+				clientes.add(c);
+			}
+			return clientes;
+		}
+	}
+	
+}

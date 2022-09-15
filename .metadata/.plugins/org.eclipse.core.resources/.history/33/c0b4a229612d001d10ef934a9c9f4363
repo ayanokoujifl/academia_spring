@@ -1,0 +1,19 @@
+package com.academia.escola.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.academia.escola.entities.Cliente;
+import com.academia.escola.repositories.ClienteRepository;
+
+public class ClienteService {
+	@Autowired
+	ClienteRepository repository;
+
+	public List<Cliente> findAll() {
+		List<Cliente> clientes = repository.findAll();
+		return clientes;
+	}
+
+}

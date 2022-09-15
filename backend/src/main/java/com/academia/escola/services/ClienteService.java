@@ -11,6 +11,7 @@ import com.academia.escola.repositories.ClienteRepository;
 
 @Service
 public class ClienteService {
+	
 	@Autowired
 	ClienteRepository repository;
 

@@ -1,0 +1,5 @@
+package com.academia.escola.services;
+
+public class ClienteService {
+
+}

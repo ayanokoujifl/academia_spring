@@ -32,8 +32,7 @@ public class ClienteController {
 	}
 
 	@PutMapping
-	public Cliente saveCliente(@RequestBody Cliente c) {
+	public void saveCliente(@RequestBody Cliente c) {
 		service.saveCliente(c);
-		return c;
 	}
 }

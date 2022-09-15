@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,9 +26,14 @@ public class FuncionarioController {
 		return funcionarios;
 	}
 
+	@GetMapping(value = "/{id}")
+	public Funcionario findById(@PathVariable Long id) {
+		Funcionario func = service.findById(id);
+		return func;
+	}
+
 	@PutMapping
-	public Funcionario saveFuncionario(@RequestBody Funcionario funcionario) {
+	public void saveFuncionario(@RequestBody Funcionario funcionario) {
 		service.saveFuncionario(funcionario);
-		return funcionario;
 	}
 }
